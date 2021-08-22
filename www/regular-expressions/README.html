@@ -1,0 +1,444 @@
+<!doctype html>
+<html>
+ <head>            
+  <style>/* Reworked by IntelliJ Team The MIT License (MIT) Copyright (c) JetBrains Adapted from https://github.com/sindresorhus/github-markdown-css The MIT License (MIT) Copyright (c) Sindre Sorhus &lt;sindresorhus@gmail.com&gt; (sindresorhus.com) Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ @font-face { font-family: octicons-anchor; src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff'); } body { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Helvetica, Arial, freesans, sans-serif; font-size: 14px; line-height: 1.6; word-wrap: break-word; margin: 0 30px; } strong { font-weight: bold; } img { border: 0; } input { color: inherit; font: inherit; margin: 0; line-height: normal; } html input[disabled] { cursor: default; } input[type="checkbox"] { box-sizing: border-box; padding: 0; } body * { box-sizing: border-box; } input { font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; } a { text-decoration: none; } a:hover, a:active { text-decoration: underline; } hr { height: 1px; padding: 0; margin: 20px 0; border: 0 none; } hr:before { display: table; content: ""; } hr:after { display: table; clear: both; content: ""; } blockquote { margin: 0; } ul, ol { padding: 0; margin-top: 0; margin-bottom: 0; } ol ol, ul ol { list-style-type: lower-roman; } ul ul ol, ul ol ol, ol ul ol, ol ol ol { list-style-type: lower-alpha; } dd { margin-left: 0; } .octicon { font: normal normal normal 16px/1 octicons-anchor; display: inline-block; text-decoration: none; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .octicon-link:before { content: '\f05c'; } .markdown-body &gt; *:first-child { margin-top: 0 !important; } .markdown-body &gt; *:last-child { margin-bottom: 0 !important; } .anchor { position: absolute; top: 0; left: 0; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; } .anchor:focus { outline: none; } h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; } h1 .octicon-link, h2 .octicon-link, h3 .octicon-link, h4 .octicon-link, h5 .octicon-link, h6 .octicon-link { display: none; color: #000; vertical-align: middle; } h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; } h1:hover .anchor .octicon-link, h2:hover .anchor .octicon-link, h3:hover .anchor .octicon-link, h4:hover .anchor .octicon-link, h5:hover .anchor .octicon-link, h6:hover .anchor .octicon-link { display: inline-block; } h1 { font-size: 2.2em; padding-top: 0.6em; } h1 .anchor { line-height: 1; } h2 { font-size: 1.8em; line-height: 1.2; padding-top: 0.6em; } h2 .anchor { line-height: 1.2; } h3 { font-size: 1.3em; line-height: 1; padding-top: 0.6em; } h3 .anchor { line-height: 1.2; } h4 { font-size: 1em; } h4 .anchor { line-height: 1.2; } h5 { font-size: 1em; } h5 .anchor { line-height: 1.1; } h6 { font-size: 1em; } h6 .anchor { line-height: 1.1; } p, blockquote, ul, ol, dl, table, pre { margin-top: 16px; margin-bottom: 16px; } ul, ol { padding-left: 2em; } ul ul, ul ol, ol ol, ol ul { margin-top: 0; margin-bottom: 0; } li &gt; p { margin-top: 0; margin-bottom: 0; } dl { padding: 0; } dl dt { padding: 0; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; } dl dd { padding: 0 16px; margin-bottom: 16px; } blockquote { padding: 10px 10px 10px 16px; border-left: 2px solid; border-radius: 0 3px 3px 0; } blockquote &gt; :first-child { margin-top: 0; } blockquote &gt; :last-child { margin-bottom: 0; } table { display: block; width: 100%; overflow: auto; word-break: normal; border-collapse: collapse; border-spacing: 0; font-size: 1em; } table th { font-weight: bold; } table th, table td { padding: 6px 13px; background: transparent; } table tr { border-top: 1px solid; } img { max-width: 100%; box-sizing: border-box; } code { font: 0.9em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 0.2em 0.4em; margin: 2px; border-radius: 3px; } pre &gt; code { padding: 0; margin: 0; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0; } .highlight { margin-bottom: 16px; } .highlight pre, pre { font: 0.85em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 16px; overflow: auto; line-height: 1.45; border-radius: 3px; } pre code { display: inline; max-width: initial; padding: 0; margin: 0; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0; } pre code:before, pre code:after { content: normal; } kbd { font: 0.9em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 0.2em 0.4em; margin: 2px; border-radius: 3px; } .task-list-item { list-style-type: none; } .task-list-item + .task-list-item { margin-top: 3px; } .task-list-item input { margin: 0 0.35em 0.25em -0.6em; vertical-align: middle; } :checked + .radio-label { z-index: 1; position: relative; } span.user-del { text-decoration: line-through; } ::-webkit-scrollbar { width: 6px; height: 6px; } ::-webkit-scrollbar-thumb { -webkit-border-radius: 10px; } ::-webkit-scrollbar-track:vertical { -webkit-box-shadow: -1px 0 0 #ededed; } ::-webkit-scrollbar-track { background-color: transparent; } ::-webkit-scrollbar { width: 6px; } </style>
+  <style>body { background-color: rgba(40, 40, 40, 255.0); font-size: 17px !important; } body, p, blockquote, ul, ol, dl, table, pre, code, tr { color: rgba(251, 241, 199, 255.0); } a { color: rgba(131, 165, 152, 255.0); } table td, table th { border: 1px solid rgba(80, 73, 69, 255.0); } hr { background-color: rgba(80, 73, 69, 255.0); } kbd, tr { border: 1px solid rgba(80, 73, 69, 255.0); } h6 { color: rgba(235, 219, 178, 255.0); } blockquote { border-left: 2px solid rgba(131, 165, 152, 0.4); } ::-webkit-scrollbar-thumb { background-color: rgba(80, 69, 73, 0.5333333333333333); } blockquote, code, pre { background-color: rgba(212, 222, 231, 0.09803921568627451); }</style>
+ </head> 
+ <body>
+  <div md-src-pos="0..11406">
+   <h1 md-src-pos="0..21">Regular Expressions</h1>
+   <h2 md-src-pos="23..38">Introduction</h2>
+   <p md-src-pos="40..137"><span md-src-pos="40..49">The terms</span> <em md-src-pos="50..70">regular expression</em><span md-src-pos="70..71">,</span> <em md-src-pos="72..79">regex</em> <span md-src-pos="80..83">and</span> <em md-src-pos="84..92">regexp</em> <span md-src-pos="93..101">are 100%</span> <span md-src-pos="102..113">synonymous.</span> <span md-src-pos="115..126">I call them</span> <em md-src-pos="127..136">regexes</em><span md-src-pos="136..137">.</span></p>
+   <blockquote md-src-pos="138..236">
+    <p md-src-pos="140..236"><span md-src-pos="140..146">Gotcha</span>: <span md-src-pos="149..152">The</span> <code md-src-pos="153..156"></code> <span md-src-pos="157..236">character is both an escape and an unescape character depending on the context.</span></p>
+   </blockquote>
+   <h2 md-src-pos="238..246">Tools</h2>
+   <ol md-src-pos="248..373">
+    <li md-src-pos="248..272"><a href="https://regex101.com/" md-src-pos="251..272">https://regex101.com/</a></li>
+    <li md-src-pos="273..295"><a href="https://regexr.com/" md-src-pos="276..295">https://regexr.com/</a></li>
+    <li md-src-pos="296..360">Any JavaScript REPL (e.g. repl.it, jsfiddle, codepen, F12...)</li>
+    <li md-src-pos="361..373">Many more</li>
+   </ol>
+   <h2 md-src-pos="375..390">Introduction</h2>
+   <p md-src-pos="392..418"><span md-src-pos="392..417">Regex has three main uses</span>:</p>
+   <ol md-src-pos="420..506">
+    <li md-src-pos="420..441">String validation.</li>
+    <li md-src-pos="442..468">Extracting sub-strings.</li>
+    <li md-src-pos="469..506">Finding and replacing sub-strings.</li>
+   </ol>
+   <p md-src-pos="508..726"><span md-src-pos="508..557">Unfortunately there are many variations of regex.</span> <span md-src-pos="559..564">.NET,</span> <span md-src-pos="565..576">JavaScript,</span> <span md-src-pos="577..596">Perl and many more.</span> <span md-src-pos="598..611">Make sure you</span>'<span md-src-pos="612..647">re using the one you think you are.</span> <span md-src-pos="649..650">I</span>'<span md-src-pos="651..726">m going to use JavaScript and use RegExr for evaluating and examining them.</span></p>
+   <p md-src-pos="728..894"><span md-src-pos="728..807">In JavaScript regexes are so common that we have a literal form as well as the,</span> <span md-src-pos="808..823">largely unused,</span> <span md-src-pos="824..840">object notation.</span> <span md-src-pos="841..894">We actually have three choices when creating a regex.</span></p>
+   <h3 md-src-pos="896..917">JavaScript Syntax</h3>
+   <p md-src-pos="919..984"><span md-src-pos="919..983">Whether JavaScript or another flavour all regexes have two parts</span>:</p>
+   <ol md-src-pos="986..1019">
+    <li md-src-pos="986..999">A pattern.</li>
+    <li md-src-pos="1000..1019">A list of flags.</li>
+   </ol>
+   <p md-src-pos="1021..1221"><span md-src-pos="1021..1113">The pattern defines most of the logic but the flags can allow us to simplify our expression.</span> <span md-src-pos="1115..1187">The following table is a description of all the valid flags in the order</span> (<span md-src-pos="1189..1201">that I think</span>) <span md-src-pos="1203..1221">they are most used</span></p>
+   <table md-src-pos="1223..1901">
+    <thead>
+     <tr md-src-pos="1223..1294">
+      <th md-src-pos="1224..1230">Flag</th>
+      <th md-src-pos="1231..1293">Description</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="1367..1438">
+      <td md-src-pos="1368..1374">i</td>
+      <td md-src-pos="1375..1437">Ignore case.</td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="1439..1510">
+      <td md-src-pos="1440..1446">s</td>
+      <td md-src-pos="1447..1509">Allow the <code md-src-pos="1458..1461">.</code> to match new lines.</td>
+     </tr>
+     <tr md-src-pos="1511..1613">
+      <td md-src-pos="1512..1518">m</td>
+      <td md-src-pos="1519..1612">Make this a multiline search. This causes <code md-src-pos="1563..1566">^</code> and <code md-src-pos="1571..1574">$</code> to match the start and end of lines.</td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="1614..1685">
+      <td md-src-pos="1615..1621">g</td>
+      <td md-src-pos="1622..1684">Global.</td>
+     </tr>
+     <tr md-src-pos="1686..1757">
+      <td md-src-pos="1687..1693">d</td>
+      <td md-src-pos="1694..1756">Generate indices for match groups.</td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="1758..1829">
+      <td md-src-pos="1759..1765">u</td>
+      <td md-src-pos="1766..1828">Unicode</td>
+     </tr>
+     <tr md-src-pos="1830..1901">
+      <td md-src-pos="1831..1837">y</td>
+      <td md-src-pos="1838..1900">Sticky algorithm.</td>
+     </tr>
+    </tbody>
+   </table>
+   <blockquote md-src-pos="1903..2162">
+    <p md-src-pos="1905..2162"><span md-src-pos="1905..1916">Personally,</span> <span md-src-pos="1917..1922">I don</span>'<span md-src-pos="1923..1947">t think you need to know</span> <code md-src-pos="1948..1951">g</code><span md-src-pos="1951..1952">,</span> <code md-src-pos="1953..1956">d</code><span md-src-pos="1956..1957">,</span> <code md-src-pos="1958..1961">u</code> <span md-src-pos="1962..1964">or</span> <code md-src-pos="1965..1968">y</code> <span md-src-pos="1969..1979">unless you</span>'<span md-src-pos="1980..2018">re planning on writing mental regexes.</span> <span md-src-pos="2020..2066">If you are planning on writing a mental regex,</span> <span md-src-pos="2067..2070">don</span>'<span md-src-pos="2071..2134">t because nobody but you will be clever enough to understand it</span> (<span md-src-pos="2136..2160">including the future you</span>)<span md-src-pos="2161..2162">.</span></p>
+   </blockquote>
+   <h2 md-src-pos="2164..2173">Syntax</h2>
+   <p md-src-pos="2175..2360"><span md-src-pos="2175..2226">JavaScript lets us declare a regex in several ways.</span> <span md-src-pos="2228..2233">There</span>'<span md-src-pos="2234..2297">s no reason to use anything other that the literal form though,</span> <span md-src-pos="2298..2308">unless you</span>'<span md-src-pos="2309..2360">re dynamically generating the pattern or the flags.</span></p>
+   <h4 md-src-pos="2362..2374">Literal</h4>
+   <pre md-src-pos="2376..2417"><code class="language-javascript" md-src-pos="2376..2417"><span md-src-pos="2376..2390"></span><span md-src-pos="2390..2414"><span style="color: rgb(104, 151, 187);">/my-regex-pattern/</span>flags</span>
+<span md-src-pos="2414..2415"></span><span md-src-pos="2414..2417"></span></code></pre>
+   <h3 md-src-pos="2419..2429">Object</h3>
+   <pre md-src-pos="2431..2688"><code class="language-javascript" md-src-pos="2431..2688"><span md-src-pos="2431..2445"></span><span md-src-pos="2445..2487"><span style="color: rgb(251, 73, 52);">new</span> RegExp<span style="color: rgb(248, 225, 170);">(</span><span style="color: rgb(184, 187, 38);">'my-regex-pattern'</span><span style="color: rgb(248, 225, 170);">[</span><span style="color: rgb(235, 219, 178);">,</span> <span style="color: rgb(184, 187, 38);">'flags'</span><span style="color: rgb(248, 225, 170);">]</span><span style="color: rgb(248, 225, 170);">)</span></span>
+<span md-src-pos="2487..2529"><span style="color: rgb(251, 73, 52);">new</span> RegExp<span style="color: rgb(248, 225, 170);">(</span><span style="color: rgb(104, 151, 187);">/my-regex-pattern/</span><span style="color: rgb(248, 225, 170);">[</span><span style="color: rgb(235, 219, 178);">,</span> <span style="color: rgb(184, 187, 38);">'flags'</span><span style="color: rgb(248, 225, 170);">]</span><span style="color: rgb(248, 225, 170);">)</span></span>
+<span md-src-pos="2529..2571">    RegExp<span style="color: rgb(248, 225, 170);">(</span><span style="color: rgb(184, 187, 38);">'my-regex-pattern'</span><span style="color: rgb(248, 225, 170);">[</span><span style="color: rgb(235, 219, 178);">,</span> <span style="color: rgb(184, 187, 38);">'flags'</span><span style="color: rgb(248, 225, 170);">]</span><span style="color: rgb(248, 225, 170);">)</span></span>
+<span md-src-pos="2571..2613">    RegExp<span style="color: rgb(248, 225, 170);">(</span><span style="color: rgb(104, 151, 187);">/my-regex-pattern/</span><span style="color: rgb(248, 225, 170);">[</span><span style="color: rgb(235, 219, 178);">,</span> <span style="color: rgb(184, 187, 38);">'flags'</span><span style="color: rgb(248, 225, 170);">]</span><span style="color: rgb(248, 225, 170);">)</span></span>
+<span md-src-pos="2613..2649"><span style="color: rgb(251, 73, 52);">new</span> RegExp<span style="color: rgb(248, 225, 170);">(</span><span style="color: rgb(104, 151, 187);">/my-regex-pattern/</span>flags<span style="color: rgb(248, 225, 170);">)</span></span>
+<span md-src-pos="2649..2685">    RegExp<span style="color: rgb(248, 225, 170);">(</span><span style="color: rgb(104, 151, 187);">/my-regex-pattern/</span>flags<span style="color: rgb(248, 225, 170);">)</span></span>
+<span md-src-pos="2685..2686"></span><span md-src-pos="2685..2688"></span></code></pre>
+   <blockquote md-src-pos="2690..2868">
+    <p md-src-pos="2692..2868"><span md-src-pos="2692..2712">WRT the object form,</span> <span md-src-pos="2713..2811">you can add flags to both the regex literal and the the second argument but only the flags passed,</span> <span md-src-pos="2812..2868">however the flags passed in the literal will be ignored.</span></p>
+   </blockquote>
+   <h2 md-src-pos="2870..2882">Executing</h2>
+   <p md-src-pos="2884..3151"><span md-src-pos="2884..2901">At a basic level,</span> <span md-src-pos="2902..2973">validation work be reading from each character in the candidate string,</span> <span md-src-pos="2974..3012">determining if it matches the pattern.</span> <span md-src-pos="3014..3151">If it does then the character is appended to a cache of matching character strings and the engine will decide whether of not to continue.</span></p>
+   <p md-src-pos="3153..3200"><span md-src-pos="3153..3200">The simplest regex is just a test for contains.</span></p>
+   <pre md-src-pos="3202..3223"><code class="language-jsregexp" md-src-pos="3202..3223"><span md-src-pos="3202..3214"></span><span md-src-pos="3214..3220"><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(184, 187, 38);">a</span><span style="color: rgb(184, 187, 38);">b</span><span style="color: rgb(184, 187, 38);">c</span><span style="color: rgb(184, 187, 38);">/</span></span>
+<span md-src-pos="3220..3221"></span><span md-src-pos="3220..3223"></span></code></pre>
+   <p md-src-pos="3225..3523"><span md-src-pos="3225..3276">Several functions can be invoked to use this regex,</span> <span md-src-pos="3277..3316">some of them are members of the string,</span> <span md-src-pos="3317..3355">some members of the regex and some the</span> <code md-src-pos="3356..3363">Regex</code> <span md-src-pos="3364..3371">object.</span> <span md-src-pos="3373..3439">The functionality of these functions overlaps quite alot and there</span>'<span md-src-pos="3440..3469">s quite a bit of duplication.</span> <span md-src-pos="3471..3473">We</span>'<span md-src-pos="3474..3523">ll just look at two off the regex object for now.</span></p>
+   <pre md-src-pos="3525..4074"><code class="language-javascript" md-src-pos="3525..4074"><span md-src-pos="3525..3539"></span><span md-src-pos="3539..3560"><span style="color: rgb(251, 73, 52);">const</span> regex <span style="color: rgb(235, 219, 178);">=</span> <span style="color: rgb(104, 151, 187);">/abc/</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="3560..3590"><span style="color: rgb(251, 73, 52);">const</span> candidateMatch <span style="color: rgb(235, 219, 178);">=</span> <span style="color: rgb(184, 187, 38);">'abc'</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="3590..3622"><span style="color: rgb(251, 73, 52);">const</span> candidateUnmatched <span style="color: rgb(235, 219, 178);">=</span> <span style="color: rgb(184, 187, 38);">'x'</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="3622..3623"></span>
+<span md-src-pos="3623..3677"><span style="color: rgb(251, 73, 52);">const</span> testResultMatched <span style="color: rgb(235, 219, 178);">=</span> regex<span style="color: rgb(235, 219, 178);">.</span>test<span style="color: rgb(248, 225, 170);">(</span>candidateMatch<span style="color: rgb(248, 225, 170);">)</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="3677..3737"><span style="color: rgb(251, 73, 52);">const</span> testResultUnmatched <span style="color: rgb(235, 219, 178);">=</span> regex<span style="color: rgb(235, 219, 178);">.</span>test<span style="color: rgb(248, 225, 170);">(</span>candidateUnmatched<span style="color: rgb(248, 225, 170);">)</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="3737..3738"></span>
+<span md-src-pos="3738..3792"><span style="color: rgb(251, 73, 52);">const</span> execResultMatched <span style="color: rgb(235, 219, 178);">=</span> regex<span style="color: rgb(235, 219, 178);">.</span>exec<span style="color: rgb(248, 225, 170);">(</span>candidateMatch<span style="color: rgb(248, 225, 170);">)</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="3792..3852"><span style="color: rgb(251, 73, 52);">const</span> execResultUnmatched <span style="color: rgb(235, 219, 178);">=</span> regex<span style="color: rgb(235, 219, 178);">.</span>exec<span style="color: rgb(248, 225, 170);">(</span>candidateUnmatched<span style="color: rgb(248, 225, 170);">)</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="3852..3853"></span>
+<span md-src-pos="3853..3876">console<span style="color: rgb(235, 219, 178);">.</span>group<span style="color: rgb(248, 225, 170);">(</span><span style="color: rgb(184, 187, 38);">'test'</span><span style="color: rgb(248, 225, 170);">)</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="3876..3908">console<span style="color: rgb(235, 219, 178);">.</span>dir<span style="color: rgb(248, 225, 170);">(</span>testResultMatched<span style="color: rgb(248, 225, 170);">)</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="3908..3942">console<span style="color: rgb(235, 219, 178);">.</span>dir<span style="color: rgb(248, 225, 170);">(</span>testResultUnmatched<span style="color: rgb(248, 225, 170);">)</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="3942..3962">console<span style="color: rgb(235, 219, 178);">.</span>groupEnd<span style="color: rgb(248, 225, 170);">(</span><span style="color: rgb(248, 225, 170);">)</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="3962..3963"></span>
+<span md-src-pos="3963..3985">console<span style="color: rgb(235, 219, 178);">.</span>group<span style="color: rgb(248, 225, 170);">(</span><span style="color: rgb(184, 187, 38);">'exec'</span><span style="color: rgb(248, 225, 170);">)</span></span>
+<span md-src-pos="3985..4017">console<span style="color: rgb(235, 219, 178);">.</span>dir<span style="color: rgb(248, 225, 170);">(</span>execResultMatched<span style="color: rgb(248, 225, 170);">)</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="4017..4051">console<span style="color: rgb(235, 219, 178);">.</span>dir<span style="color: rgb(248, 225, 170);">(</span>execResultUnmatched<span style="color: rgb(248, 225, 170);">)</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="4051..4071">console<span style="color: rgb(235, 219, 178);">.</span>groupEnd<span style="color: rgb(248, 225, 170);">(</span><span style="color: rgb(248, 225, 170);">)</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="4071..4072"></span><span md-src-pos="4071..4074"></span></code></pre>
+   <p md-src-pos="4076..4093"><span md-src-pos="4076..4092">This will output</span>:</p>
+   <pre md-src-pos="4095..4193"><code class="language-text" md-src-pos="4095..4193"><span md-src-pos="4095..4103"></span><span md-src-pos="4103..4108">test</span>
+<span md-src-pos="4108..4115">  true</span>
+<span md-src-pos="4115..4123">  false</span>
+<span md-src-pos="4123..4128">exec</span>
+<span md-src-pos="4128..4183">  [ 'abc', index: 0, input: 'abc', groups: undefined ]</span>
+<span md-src-pos="4183..4190">  null</span>
+<span md-src-pos="4190..4191"></span><span md-src-pos="4190..4193"></span></code></pre>
+   <p md-src-pos="4195..4354"><span md-src-pos="4195..4197">So</span> <code md-src-pos="4198..4207">.test()</code> <span md-src-pos="4208..4245">gives us a simple boolean whereas the</span> <code md-src-pos="4246..4255">.exec()</code> <span md-src-pos="4256..4320">gives us an array of objects containing metadata about the match</span> (<span md-src-pos="4322..4324">or</span> <code md-src-pos="4325..4331">null</code> <span md-src-pos="4332..4352">is there is no match</span>)<span md-src-pos="4353..4354">.</span></p>
+   <p md-src-pos="4356..4452"><code md-src-pos="4356..4363">/abc/</code> <span md-src-pos="4364..4414">will match any string that contains a substring of</span> <code md-src-pos="4415..4422">'abc'</code><span md-src-pos="4422..4423">,</span> <span md-src-pos="4424..4451">so the following also match</span>:</p>
+   <pre md-src-pos="4454..4706"><code class="language-javascript" md-src-pos="4454..4706"><span md-src-pos="4454..4468"></span><span md-src-pos="4468..4489"><span style="color: rgb(251, 73, 52);">const</span> regex <span style="color: rgb(235, 219, 178);">=</span> <span style="color: rgb(104, 151, 187);">/abc/</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="4489..4505"><span style="color: rgb(251, 73, 52);">const</span> tests <span style="color: rgb(235, 219, 178);">=</span> <span style="color: rgb(248, 225, 170);">[</span></span>
+<span md-src-pos="4505..4525">    <span style="color: rgb(248, 225, 170);">{</span>input<span style="color: rgb(235, 219, 178);">:</span> <span style="color: rgb(184, 187, 38);">'abc'</span><span style="color: rgb(248, 225, 170);">}</span><span style="color: rgb(235, 219, 178);">,</span></span>
+<span md-src-pos="4525..4546">    <span style="color: rgb(248, 225, 170);">{</span>input<span style="color: rgb(235, 219, 178);">:</span> <span style="color: rgb(184, 187, 38);">' abc'</span><span style="color: rgb(248, 225, 170);">}</span><span style="color: rgb(235, 219, 178);">,</span></span>
+<span md-src-pos="4546..4567">    <span style="color: rgb(248, 225, 170);">{</span>input<span style="color: rgb(235, 219, 178);">:</span> <span style="color: rgb(184, 187, 38);">'abcc'</span><span style="color: rgb(248, 225, 170);">}</span><span style="color: rgb(235, 219, 178);">,</span></span>
+<span md-src-pos="4567..4590">    <span style="color: rgb(248, 225, 170);">{</span>input<span style="color: rgb(235, 219, 178);">:</span> <span style="color: rgb(184, 187, 38);">'aabcc'</span><span style="color: rgb(248, 225, 170);">}</span><span style="color: rgb(248, 225, 170);">]</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="4590..4591"></span>
+<span md-src-pos="4591..4630"><span style="color: rgb(251, 73, 52);">for</span> <span style="color: rgb(248, 225, 170);">(</span><span style="color: rgb(251, 73, 52);">let</span> i <span style="color: rgb(235, 219, 178);">=</span> <span style="color: rgb(211, 134, 155);">0</span><span style="color: rgb(235, 219, 178);">;</span> i <span style="color: rgb(235, 219, 178);">&lt;</span> tests<span style="color: rgb(235, 219, 178);">.</span>length<span style="color: rgb(235, 219, 178);">;</span> i<span style="color: rgb(235, 219, 178);">++</span><span style="color: rgb(248, 225, 170);">)</span></span>
+<span md-src-pos="4630..4680">    tests<span style="color: rgb(248, 225, 170);">[</span>i<span style="color: rgb(248, 225, 170);">]</span><span style="color: rgb(235, 219, 178);">.</span>result <span style="color: rgb(235, 219, 178);">=</span> regex<span style="color: rgb(235, 219, 178);">.</span>test<span style="color: rgb(248, 225, 170);">(</span>tests<span style="color: rgb(248, 225, 170);">[</span>i<span style="color: rgb(248, 225, 170);">]</span><span style="color: rgb(235, 219, 178);">.</span>input<span style="color: rgb(248, 225, 170);">)</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="4680..4681"></span>
+<span md-src-pos="4681..4703">console<span style="color: rgb(235, 219, 178);">.</span>table<span style="color: rgb(248, 225, 170);">(</span>tests<span style="color: rgb(248, 225, 170);">)</span><span style="color: rgb(235, 219, 178);">;</span></span>
+<span md-src-pos="4703..4704"></span><span md-src-pos="4703..4706"></span></code></pre>
+   <p md-src-pos="4708..4717"><span md-src-pos="4708..4716">Produces</span>:</p>
+   <table md-src-pos="4721..4918">
+    <thead>
+     <tr md-src-pos="4721..4753">
+      <th md-src-pos="4722..4731">(index)</th>
+      <th md-src-pos="4732..4743">input</th>
+      <th md-src-pos="4744..4752">result</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="4787..4819">
+      <td md-src-pos="4788..4797">0</td>
+      <td md-src-pos="4798..4809"><code md-src-pos="4799..4806">'abc'</code></td>
+      <td md-src-pos="4810..4818"><code md-src-pos="4811..4817">true</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="4820..4852">
+      <td md-src-pos="4821..4830">1</td>
+      <td md-src-pos="4831..4842"><code md-src-pos="4832..4840">' abc'</code></td>
+      <td md-src-pos="4843..4851"><code md-src-pos="4844..4850">true</code></td>
+     </tr>
+     <tr md-src-pos="4853..4885">
+      <td md-src-pos="4854..4863">2</td>
+      <td md-src-pos="4864..4875"><code md-src-pos="4865..4873">'abcc'</code></td>
+      <td md-src-pos="4876..4884"><code md-src-pos="4877..4883">true</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="4886..4918">
+      <td md-src-pos="4887..4896">3</td>
+      <td md-src-pos="4897..4908"><code md-src-pos="4898..4906">'aabcc</code>'</td>
+      <td md-src-pos="4909..4917"><code md-src-pos="4910..4916">true</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <h2 md-src-pos="4921..4941">String Validation</h2>
+   <p md-src-pos="4943..5012"><span md-src-pos="4943..5012">To validate a string we can create much more complicated expressions.</span></p>
+   <h3 md-src-pos="5014..5038">Repeating characters</h3>
+   <p md-src-pos="5040..5144"><span md-src-pos="5040..5144">We have a few symbols we can use to tell the regex engine that we want to look for repeating characters.</span></p>
+   <table md-src-pos="5146..5450">
+    <thead>
+     <tr md-src-pos="5146..5200">
+      <th md-src-pos="5147..5165">Metacharacter(s)</th>
+      <th md-src-pos="5166..5199">Description</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="5246..5288">
+      <td md-src-pos="5247..5255"><code md-src-pos="5248..5251">*</code></td>
+      <td md-src-pos="5256..5287">Match zero or more instances.</td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="5289..5331">
+      <td md-src-pos="5290..5298"><code md-src-pos="5291..5294">?</code></td>
+      <td md-src-pos="5299..5330">Match zero or one instance.</td>
+     </tr>
+     <tr md-src-pos="5332..5450">
+      <td md-src-pos="5333..5356"><code md-src-pos="5334..5352">{[[min],[max]]]}</code></td>
+      <td md-src-pos="5357..5449">Between <code md-src-pos="5366..5371">min</code> and <code md-src-pos="5376..5381">max</code> (<em md-src-pos="5383..5394">inclusive</em>). Either is optional.</td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="5452..5739"><span md-src-pos="5452..5530">If we knew exactly how many repeating characters then we could just type them,</span> <span md-src-pos="5531..5559">this is fine when there aren</span>'<span md-src-pos="5560..5615">t many characters but very difficult to read when there</span>'<span md-src-pos="5616..5634">s more than a few.</span> <span md-src-pos="5636..5723">We might also want to allow a a number of characters between two limits which we couldn</span>'<span md-src-pos="5724..5739">t do by typing.</span></p>
+   <blockquote md-src-pos="5741..5870">
+    <p md-src-pos="5743..5870"><span md-src-pos="5743..5770">Technically we could use an</span> <code md-src-pos="5771..5775">OR</code> <span md-src-pos="5776..5825">to have a variable number of characters but there</span>'<span md-src-pos="5826..5859">s no real world scenario where we</span>'<span md-src-pos="5860..5870">d do that.</span></p>
+   </blockquote>
+   <p md-src-pos="5872..6102"><span md-src-pos="5872..5905">A common regex is matching a URL.</span> <span md-src-pos="5907..5933">The two common schemes are</span> <code md-src-pos="5934..5943">http://</code> <span md-src-pos="5944..5947">and</span> <code md-src-pos="5948..5958">https://</code> <span md-src-pos="5959..5978">so we want to match</span> <code md-src-pos="5979..5985">http</code> <span md-src-pos="5986..6012">and optionally one or more</span> <code md-src-pos="6013..6016">s</code> <span md-src-pos="6017..6028">characters,</span> <span md-src-pos="6029..6044">followed by the</span> <code md-src-pos="6045..6050">://</code><span md-src-pos="6050..6051">.</span> <span md-src-pos="6053..6067">We can use the</span> <code md-src-pos="6068..6071">?</code> <span md-src-pos="6072..6102">metacharacter to achieve this.</span></p>
+   <blockquote md-src-pos="6104..6224">
+    <p md-src-pos="6106..6224"><span md-src-pos="6106..6123">Remember that the</span> <code md-src-pos="6124..6127">/</code> <span md-src-pos="6128..6172">character delimits the regex datatype and it</span>'<span md-src-pos="6173..6181">s flags.</span> <span md-src-pos="6183..6217">The escape character in regexes is</span> <code md-src-pos="6218..6221"></code><span md-src-pos="6221..6222">.</span></p>
+   </blockquote>
+   <pre md-src-pos="6226..6257"><code class="language-jsregexp" md-src-pos="6226..6257"><span md-src-pos="6226..6238"></span><span md-src-pos="6238..6254"><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(204, 120, 50);">^</span><span style="color: rgb(184, 187, 38);">h</span><span style="color: rgb(184, 187, 38);">t</span><span style="color: rgb(184, 187, 38);">t</span><span style="color: rgb(184, 187, 38);">p</span><span style="color: rgb(184, 187, 38);">s</span><span style="color: rgb(211, 134, 155);">?</span><span style="color: rgb(184, 187, 38);">:</span><span style="color: rgb(147, 150, 192);">\/</span><span style="color: rgb(147, 150, 192);">\/</span><span style="color: rgb(204, 120, 50);">$</span><span style="color: rgb(184, 187, 38);">/</span></span>
+<span md-src-pos="6254..6255"></span><span md-src-pos="6254..6257"></span></code></pre>
+   <table md-src-pos="6259..6474">
+    <thead>
+     <tr md-src-pos="6259..6293">
+      <th md-src-pos="6260..6269">(index)</th>
+      <th md-src-pos="6270..6283">input</th>
+      <th md-src-pos="6284..6292">result</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="6329..6365">
+      <td md-src-pos="6330..6339">0</td>
+      <td md-src-pos="6340..6353"><code md-src-pos="6341..6350">http://</code></td>
+      <td md-src-pos="6354..6364"><code md-src-pos="6355..6361">true</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="6366..6401">
+      <td md-src-pos="6367..6376">1</td>
+      <td md-src-pos="6377..6389"><code md-src-pos="6378..6388">https://</code></td>
+      <td md-src-pos="6390..6400"><code md-src-pos="6391..6397">true</code></td>
+     </tr>
+     <tr md-src-pos="6402..6437">
+      <td md-src-pos="6403..6412">2</td>
+      <td md-src-pos="6413..6426"><code md-src-pos="6414..6422">htt://</code></td>
+      <td md-src-pos="6427..6436"><code md-src-pos="6428..6435">false</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="6438..6474">
+      <td md-src-pos="6439..6448">3</td>
+      <td md-src-pos="6449..6462"><code md-src-pos="6450..6461">http s://</code></td>
+      <td md-src-pos="6463..6473"><code md-src-pos="6464..6471">false</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <h2 md-src-pos="6476..6493">Metacharacters</h2>
+   <p md-src-pos="6495..6643"><span md-src-pos="6495..6540">The regex as we have it will match any string</span> <em md-src-pos="6541..6553">containing</em> <span md-src-pos="6554..6566">the pattern.</span> <span md-src-pos="6568..6643">This means that the regex as we have it still matches some invalid strings.</span></p>
+   <table md-src-pos="6645..6841">
+    <thead>
+     <tr md-src-pos="6645..6679">
+      <th md-src-pos="6646..6655">(index)</th>
+      <th md-src-pos="6656..6669">input</th>
+      <th md-src-pos="6670..6678">result</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="6715..6757">
+      <td md-src-pos="6716..6725">0</td>
+      <td md-src-pos="6726..6745"><code md-src-pos="6727..6742">foohttp://bar</code></td>
+      <td md-src-pos="6746..6756"><code md-src-pos="6747..6753">true</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="6758..6799">
+      <td md-src-pos="6759..6768">1</td>
+      <td md-src-pos="6769..6787"><code md-src-pos="6770..6786">https://</code></td>
+      <td md-src-pos="6788..6798"><code md-src-pos="6789..6795">true</code></td>
+     </tr>
+     <tr md-src-pos="6800..6841">
+      <td md-src-pos="6801..6810">2</td>
+      <td md-src-pos="6811..6831"><code md-src-pos="6812..6827">ftp://http://</code></td>
+      <td md-src-pos="6832..6840"><code md-src-pos="6833..6839">true</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="6843..7077"><span md-src-pos="6843..6934">Metacharacters are place holders for non-printable positions such as the start of a string,</span> <span md-src-pos="6935..6955">the end of a string,</span> <span md-src-pos="6956..6982">word boundries and others.</span> <span md-src-pos="6984..7077">To fix the regex above we need to add the metacharacters for the start and end of the string.</span></p>
+   <pre md-src-pos="7079..7108"><code class="language-jsregexp" md-src-pos="7079..7108"><span md-src-pos="7079..7091"></span><span md-src-pos="7091..7105"><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(204, 120, 50);">^</span><span style="color: rgb(184, 187, 38);">h</span><span style="color: rgb(184, 187, 38);">t</span><span style="color: rgb(184, 187, 38);">t</span><span style="color: rgb(184, 187, 38);">p</span><span style="color: rgb(184, 187, 38);">s</span><span style="color: rgb(211, 134, 155);">?</span><span style="color: rgb(184, 187, 38);">:</span><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(204, 120, 50);">$</span><span style="color: rgb(184, 187, 38);">/</span></span>
+<span md-src-pos="7105..7106"></span><span md-src-pos="7105..7108"></span></code></pre>
+   <table md-src-pos="7110..7391">
+    <thead>
+     <tr md-src-pos="7110..7156">
+      <th md-src-pos="7111..7120">(index)</th>
+      <th md-src-pos="7121..7145">input</th>
+      <th md-src-pos="7146..7155">result</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="7204..7250">
+      <td md-src-pos="7205..7214">0</td>
+      <td md-src-pos="7215..7239"><code md-src-pos="7216..7228">'http://'</code></td>
+      <td md-src-pos="7240..7249"><code md-src-pos="7241..7247">true</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="7251..7297">
+      <td md-src-pos="7252..7261">1</td>
+      <td md-src-pos="7262..7286"><code md-src-pos="7263..7279">'https:// '</code></td>
+      <td md-src-pos="7287..7296"><code md-src-pos="7288..7295">false</code></td>
+     </tr>
+     <tr md-src-pos="7298..7344">
+      <td md-src-pos="7299..7308">2</td>
+      <td md-src-pos="7309..7333"><code md-src-pos="7310..7328">'foohttps:// '</code></td>
+      <td md-src-pos="7334..7343"><code md-src-pos="7335..7342">false</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="7345..7391">
+      <td md-src-pos="7346..7355">3</td>
+      <td md-src-pos="7356..7380"><code md-src-pos="7357..7379">'ftp://https:// '</code></td>
+      <td md-src-pos="7381..7390"><code md-src-pos="7382..7389">false</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="7393..7522"><span md-src-pos="7393..7440">Matching the domain brings some new challenges.</span> <span md-src-pos="7442..7445">Let</span>'<span md-src-pos="7446..7485">s just work with simple examples first,</span> <span md-src-pos="7486..7522">addresses with just a TLD and a SLD.</span></p>
+   <ul md-src-pos="7524..7637">
+    <li md-src-pos="7524..7546"><code md-src-pos="7526..7546">http://example.com</code></li>
+    <li md-src-pos="7547..7570"><code md-src-pos="7549..7570">https://example.com</code></li>
+    <li md-src-pos="7571..7592"><code md-src-pos="7573..7592">http://example.es</code></li>
+    <li md-src-pos="7593..7615"><code md-src-pos="7595..7615">https://example.es</code></li>
+    <li md-src-pos="7616..7631"><code md-src-pos="7618..7631">foo-bar.com</code></li>
+    <li md-src-pos="7632..7637">...</li>
+   </ul>
+   <p md-src-pos="7639..7737"><span md-src-pos="7639..7705">We need to match any valid character for a SLD and then for a TLD,</span> <span md-src-pos="7706..7732">we also need to escape the</span> <code md-src-pos="7733..7736">.</code><span md-src-pos="7736..7737">.</span></p>
+   <p md-src-pos="7739..7807"><span md-src-pos="7739..7741">We</span>'<span md-src-pos="7742..7744">ll</span> <em md-src-pos="7745..7754">pretend</em> <span md-src-pos="7755..7807">that valid URLs are all the alphanumeric characters.</span></p>
+   <p md-src-pos="7809..7881"><span md-src-pos="7809..7860">To achieve this we need to introduce a new concept,</span> <em md-src-pos="7861..7880">Character Classes</em><span md-src-pos="7880..7881">.</span></p>
+   <h3 md-src-pos="7883..7904">Character Classes</h3>
+   <p md-src-pos="7906..8242"><span md-src-pos="7906..7947">A character class is a set of characters.</span> <span md-src-pos="7949..8018">We use them when we want to say that any character in a set is valid.</span> <span md-src-pos="8020..8095">We declare a character class by wrapping the characters in square brackets.</span> <span md-src-pos="8097..8109">For example,</span> <code md-src-pos="8110..8117">[abc]</code> <span md-src-pos="8118..8144">would match the characters</span> <code md-src-pos="8145..8148">a</code><span md-src-pos="8148..8149">,</span> <code md-src-pos="8150..8153">b</code> <span md-src-pos="8154..8156">or</span> <code md-src-pos="8157..8160">c</code><span md-src-pos="8160..8161">.</span> <span md-src-pos="8163..8242">We can apply the repetition modifiers above as if this were a single character.</span></p>
+   <p md-src-pos="8244..8327"><span md-src-pos="8244..8264">For our URL example,</span> <span md-src-pos="8265..8326">to say that we want any alphanumeric character we could write</span>:</p>
+   <pre md-src-pos="8329..8411"><code class="language-jsregexp" md-src-pos="8329..8411"><span md-src-pos="8329..8341"></span><span md-src-pos="8341..8408"><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(184, 187, 38);">a</span><span style="color: rgb(184, 187, 38);">b</span><span style="color: rgb(184, 187, 38);">c</span><span style="color: rgb(184, 187, 38);">d</span><span style="color: rgb(184, 187, 38);">e</span><span style="color: rgb(184, 187, 38);">f</span><span style="color: rgb(184, 187, 38);">g</span><span style="color: rgb(184, 187, 38);">h</span><span style="color: rgb(184, 187, 38);">i</span><span style="color: rgb(184, 187, 38);">j</span><span style="color: rgb(184, 187, 38);">k</span><span style="color: rgb(184, 187, 38);">l</span><span style="color: rgb(184, 187, 38);">m</span><span style="color: rgb(184, 187, 38);">n</span><span style="color: rgb(184, 187, 38);">o</span><span style="color: rgb(184, 187, 38);">p</span><span style="color: rgb(184, 187, 38);">q</span><span style="color: rgb(184, 187, 38);">r</span><span style="color: rgb(184, 187, 38);">s</span><span style="color: rgb(184, 187, 38);">t</span><span style="color: rgb(184, 187, 38);">u</span><span style="color: rgb(184, 187, 38);">v</span><span style="color: rgb(184, 187, 38);">w</span><span style="color: rgb(184, 187, 38);">z</span><span style="color: rgb(184, 187, 38);">y</span><span style="color: rgb(184, 187, 38);">z</span><span style="color: rgb(184, 187, 38);">A</span><span style="color: rgb(184, 187, 38);">B</span><span style="color: rgb(184, 187, 38);">C</span><span style="color: rgb(184, 187, 38);">D</span><span style="color: rgb(184, 187, 38);">E</span><span style="color: rgb(184, 187, 38);">F</span><span style="color: rgb(184, 187, 38);">G</span><span style="color: rgb(184, 187, 38);">H</span><span style="color: rgb(184, 187, 38);">I</span><span style="color: rgb(184, 187, 38);">J</span><span style="color: rgb(184, 187, 38);">K</span><span style="color: rgb(184, 187, 38);">L</span><span style="color: rgb(184, 187, 38);">M</span><span style="color: rgb(184, 187, 38);">N</span><span style="color: rgb(184, 187, 38);">O</span><span style="color: rgb(184, 187, 38);">P</span><span style="color: rgb(184, 187, 38);">Q</span><span style="color: rgb(184, 187, 38);">R</span><span style="color: rgb(184, 187, 38);">S</span><span style="color: rgb(184, 187, 38);">T</span><span style="color: rgb(184, 187, 38);">U</span><span style="color: rgb(184, 187, 38);">V</span><span style="color: rgb(184, 187, 38);">W</span><span style="color: rgb(184, 187, 38);">Z</span><span style="color: rgb(184, 187, 38);">Y</span><span style="color: rgb(184, 187, 38);">Z</span><span style="color: rgb(184, 187, 38);">0</span><span style="color: rgb(184, 187, 38);">1</span><span style="color: rgb(184, 187, 38);">2</span><span style="color: rgb(184, 187, 38);">3</span><span style="color: rgb(184, 187, 38);">4</span><span style="color: rgb(184, 187, 38);">5</span><span style="color: rgb(184, 187, 38);">6</span><span style="color: rgb(184, 187, 38);">7</span><span style="color: rgb(184, 187, 38);">8</span><span style="color: rgb(184, 187, 38);">9</span><span style="color: rgb(184, 187, 38);">]</span><span style="color: rgb(211, 134, 155);">*</span><span style="color: rgb(184, 187, 38);">/</span></span>
+<span md-src-pos="8408..8409"></span><span md-src-pos="8408..8411"></span></code></pre>
+   <p md-src-pos="8413..8502"><span md-src-pos="8413..8439">This is a lot to type out,</span> <span md-src-pos="8440..8466">so we have some shortcuts.</span> <span md-src-pos="8468..8502">The first option is to use ranges.</span></p>
+   <pre md-src-pos="8504..8533"><code class="language-jsregexp" md-src-pos="8504..8533"><span md-src-pos="8504..8516"></span><span md-src-pos="8516..8530"><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(232, 191, 106);">[</span><span style="color: rgb(184, 187, 38);">a</span><span style="color: rgb(184, 187, 38);">-</span><span style="color: rgb(184, 187, 38);">z</span><span style="color: rgb(184, 187, 38);">A</span><span style="color: rgb(184, 187, 38);">-</span><span style="color: rgb(184, 187, 38);">z</span><span style="color: rgb(184, 187, 38);">0</span><span style="color: rgb(184, 187, 38);">-</span><span style="color: rgb(184, 187, 38);">9</span><span style="color: rgb(232, 191, 106);">]</span><span style="color: rgb(184, 187, 38);">/</span></span>
+<span md-src-pos="8530..8531"></span><span md-src-pos="8530..8533"></span></code></pre>
+   <p md-src-pos="8535..8704"><span md-src-pos="8535..8563">This is much easier to read,</span> <span md-src-pos="8564..8585">but we can to better.</span> <span md-src-pos="8587..8606">Remember the flags?</span> <span md-src-pos="8608..8622">We can add the</span> <code md-src-pos="8623..8626">i</code> <span md-src-pos="8627..8674">flag to make it case insensitive so that we don</span>'<span md-src-pos="8675..8704">t need to declare both cases.</span></p>
+   <pre md-src-pos="8706..8733"><code class="language-jsregexp" md-src-pos="8706..8733"><span md-src-pos="8706..8718"></span><span md-src-pos="8718..8730"><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(232, 191, 106);">[</span><span style="color: rgb(184, 187, 38);">a</span><span style="color: rgb(184, 187, 38);">-</span><span style="color: rgb(184, 187, 38);">z</span><span style="color: rgb(184, 187, 38);">0</span><span style="color: rgb(184, 187, 38);">-</span><span style="color: rgb(184, 187, 38);">9</span><span style="color: rgb(232, 191, 106);">]</span><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(184, 187, 38);">i</span></span>
+<span md-src-pos="8730..8731"></span><span md-src-pos="8730..8733"></span></code></pre>
+   <p md-src-pos="8735..8841"><span md-src-pos="8735..8771">We can make yet another improvement,</span> <code md-src-pos="8772..8776">\d</code> <span md-src-pos="8777..8816">is a shorthand for any number character</span> (<span md-src-pos="8818..8831">equivilent to</span> <code md-src-pos="8832..8839">[0-9]</code>)<span md-src-pos="8840..8841">.</span></p>
+   <pre md-src-pos="8843..8869"><code class="language-jsregexp" md-src-pos="8843..8869"><span md-src-pos="8843..8855"></span><span md-src-pos="8855..8866"><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(232, 191, 106);">[</span><span style="color: rgb(184, 187, 38);">a</span><span style="color: rgb(184, 187, 38);">-</span><span style="color: rgb(184, 187, 38);">z</span><span style="color: rgb(232, 191, 106);">\d</span><span style="color: rgb(232, 191, 106);">]</span><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(184, 187, 38);">i</span></span>
+<span md-src-pos="8866..8867"></span><span md-src-pos="8866..8869"></span></code></pre>
+   <p md-src-pos="8871..8993"><span md-src-pos="8871..8879">Finally,</span> <span md-src-pos="8880..8919">there one more improvement we can make.</span> <span md-src-pos="8921..8924">The</span> <code md-src-pos="8925..8929">\w</code> <span md-src-pos="8930..8993">character class matches any alphanumeric character of any case.</span></p>
+   <pre md-src-pos="8996..9016"><code class="language-jsregexp" md-src-pos="8996..9016"><span md-src-pos="8996..9008"></span><span md-src-pos="9008..9013"><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(232, 191, 106);">\w</span><span style="color: rgb(184, 187, 38);">/</span></span>
+<span md-src-pos="9013..9014"></span><span md-src-pos="9013..9016"></span></code></pre>
+   <pre md-src-pos="9018..9061"><code class="language-jsregexp" md-src-pos="9018..9061"><span md-src-pos="9018..9030"></span><span md-src-pos="9030..9058"><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(204, 120, 50);">^</span><span style="color: rgb(184, 187, 38);">h</span><span style="color: rgb(184, 187, 38);">t</span><span style="color: rgb(184, 187, 38);">t</span><span style="color: rgb(184, 187, 38);">p</span><span style="color: rgb(184, 187, 38);">s</span><span style="color: rgb(211, 134, 155);">?</span><span style="color: rgb(184, 187, 38);">:</span><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(232, 191, 106);">\w</span><span style="color: rgb(211, 134, 155);">*</span><span style="color: rgb(204, 120, 50);">\.</span><span style="color: rgb(232, 191, 106);">[</span><span style="color: rgb(184, 187, 38);">a</span><span style="color: rgb(184, 187, 38);">-</span><span style="color: rgb(184, 187, 38);">z</span><span style="color: rgb(232, 191, 106);">]</span><span style="color: rgb(232, 191, 106);">{</span><span style="color: rgb(211, 134, 155);">2</span><span style="color: rgb(235, 219, 178);">,</span><span style="color: rgb(211, 134, 155);">3</span><span style="color: rgb(232, 191, 106);">}</span><span style="color: rgb(204, 120, 50);">$</span><span style="color: rgb(184, 187, 38);">/</span></span>
+<span md-src-pos="9058..9059"></span><span md-src-pos="9058..9061"></span></code></pre>
+   <h3 md-src-pos="9063..9080">OR with words</h3>
+   <p md-src-pos="9082..9608"><span md-src-pos="9082..9130">The character classes are akin to a long boolean</span> <code md-src-pos="9131..9135">OR</code> <span md-src-pos="9136..9168">over a set of single characters.</span> <span md-src-pos="9170..9192">We can also perform an</span> <code md-src-pos="9193..9197">OR</code> <span md-src-pos="9198..9209">on strings.</span> <span md-src-pos="9211..9254">The URL above could have been written as an</span> <code md-src-pos="9255..9261">http</code> <span md-src-pos="9262..9264">or</span> <code md-src-pos="9265..9272">https</code><span md-src-pos="9272..9273">.</span> <span md-src-pos="9275..9341">The way we have written it is more succinct than writing an entire</span> <code md-src-pos="9342..9346">OR</code> <span md-src-pos="9347..9432">but there are other cases where might not be able to just have an optional character.</span> <span md-src-pos="9434..9544">If we wanted to confirm that a filename has an image extension then we would have to check that it ends with a</span> <code md-src-pos="9545..9551">.jpg</code><span md-src-pos="9551..9552">,</span> <code md-src-pos="9553..9559">.gif</code><span md-src-pos="9559..9560">,</span> <code md-src-pos="9561..9567">.bmp</code> <span md-src-pos="9568..9572">etc.</span> <span md-src-pos="9574..9607">To achieve this we use the syntax</span>:</p>
+   <pre md-src-pos="9610..9646"><code class="language-regexp" md-src-pos="9610..9646"><span md-src-pos="9610..9620"></span><span md-src-pos="9620..9643"><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(232, 191, 106);">(</span><span style="color: rgb(204, 120, 50);">\.</span><span style="color: rgb(184, 187, 38);">g</span><span style="color: rgb(184, 187, 38);">i</span><span style="color: rgb(184, 187, 38);">f</span><span style="color: rgb(204, 120, 50);">|</span><span style="color: rgb(204, 120, 50);">\.</span><span style="color: rgb(184, 187, 38);">p</span><span style="color: rgb(184, 187, 38);">n</span><span style="color: rgb(184, 187, 38);">g</span><span style="color: rgb(204, 120, 50);">|</span><span style="color: rgb(204, 120, 50);">\.</span><span style="color: rgb(184, 187, 38);">b</span><span style="color: rgb(184, 187, 38);">m</span><span style="color: rgb(184, 187, 38);">p</span><span style="color: rgb(232, 191, 106);">)</span><span style="color: rgb(204, 120, 50);">$</span><span style="color: rgb(184, 187, 38);">/</span></span>
+<span md-src-pos="9643..9644"></span><span md-src-pos="9643..9646"></span></code></pre>
+   <table md-src-pos="9648..9976">
+    <thead>
+     <tr md-src-pos="9648..9694">
+      <th md-src-pos="9649..9658">(index)</th>
+      <th md-src-pos="9659..9683">input</th>
+      <th md-src-pos="9684..9693">result</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="9742..9788">
+      <td md-src-pos="9743..9752"><code md-src-pos="9744..9747">0</code></td>
+      <td md-src-pos="9753..9777"><code md-src-pos="9754..9764">file.jpg</code></td>
+      <td md-src-pos="9778..9787"><code md-src-pos="9779..9785">true</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="9789..9835">
+      <td md-src-pos="9790..9799"><code md-src-pos="9791..9794">1</code></td>
+      <td md-src-pos="9800..9824"><code md-src-pos="9801..9811">file.gif</code></td>
+      <td md-src-pos="9825..9834"><code md-src-pos="9826..9832">true</code></td>
+     </tr>
+     <tr md-src-pos="9836..9882">
+      <td md-src-pos="9837..9846"><code md-src-pos="9838..9841">2</code></td>
+      <td md-src-pos="9847..9871"><code md-src-pos="9848..9858">file.bmp</code></td>
+      <td md-src-pos="9872..9881"><code md-src-pos="9873..9879">true</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="9883..9929">
+      <td md-src-pos="9884..9893"><code md-src-pos="9885..9888">3</code></td>
+      <td md-src-pos="9894..9918"><code md-src-pos="9895..9911">my.file.jpg.bm</code></td>
+      <td md-src-pos="9919..9928"><code md-src-pos="9920..9926">true</code></td>
+     </tr>
+     <tr md-src-pos="9930..9976">
+      <td md-src-pos="9931..9940"><code md-src-pos="9932..9935">4</code></td>
+      <td md-src-pos="9941..9965"><code md-src-pos="9942..9964">not-an-image.jpg.txt</code></td>
+      <td md-src-pos="9966..9975"><code md-src-pos="9967..9974">false</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <h2 md-src-pos="9978..9997">Capturing groups</h2>
+   <p md-src-pos="9999..10170"><span md-src-pos="9999..10004">There</span>'<span md-src-pos="10005..10059">s times when we need to look for repetitions that aren</span>'<span md-src-pos="10060..10081">t next to each other,</span> <span md-src-pos="10082..10170">for example we might want to check that a list of filenames all have the same extension.</span></p>
+   <p md-src-pos="10172..10299"><span md-src-pos="10172..10198">Let take a simple example.</span> <span md-src-pos="10200..10202">We</span>'<span md-src-pos="10203..10237">ll have some arbitrary string that</span>'<span md-src-pos="10238..10279">s repeated three times and separated by a</span> <code md-src-pos="10280..10283">,</code> <span md-src-pos="10284..10294">and then a</span> <code md-src-pos="10295..10298">-</code><span md-src-pos="10298..10299">.</span></p>
+   <p md-src-pos="10301..10306"><span md-src-pos="10301..10305">e.g.</span>:</p>
+   <ul md-src-pos="10308..10333">
+    <li md-src-pos="10308..10317"><code md-src-pos="10310..10317">a,a-a</code></li>
+    <li md-src-pos="10318..10333"><code md-src-pos="10320..10333">foo,foo-foo</code></li>
+   </ul>
+   <p md-src-pos="10335..10672"><span md-src-pos="10335..10366">In the previous section we used</span> <code md-src-pos="10367..10370">(</code> <span md-src-pos="10371..10374">and</span> <code md-src-pos="10375..10378">)</code> <span md-src-pos="10379..10408">to delimit the options in the</span> <code md-src-pos="10409..10413">OR</code><span md-src-pos="10413..10414">.</span> <span md-src-pos="10416..10525">This actually create a capturing group and we can refer back to capturing groups in other parts of the regex.</span> <span md-src-pos="10527..10585">The simplest syntax for referencing a capturing group is a</span> <code md-src-pos="10586..10589"></code> <span md-src-pos="10590..10672">followed by an integer representing the ordinal position of the group to retrieve.</span></p>
+   <p md-src-pos="10674..10779"><span md-src-pos="10674..10751">in the example above we create a capturing group around the text prior to the</span> <code md-src-pos="10752..10755">,</code> <span md-src-pos="10756..10773">and reuse it with</span> <code md-src-pos="10774..10778">\1</code><span md-src-pos="10778..10779">.</span></p>
+   <pre md-src-pos="10781..10810"><code class="language-regexp" md-src-pos="10781..10810"><span md-src-pos="10781..10791"></span><span md-src-pos="10791..10807"><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(204, 120, 50);">^</span><span style="color: rgb(232, 191, 106);">(</span><span style="color: rgb(232, 191, 106);">\w</span><span style="color: rgb(211, 134, 155);">+</span><span style="color: rgb(232, 191, 106);">)</span><span style="color: rgb(184, 187, 38);">,</span><span style="color: rgb(251, 241, 199);">\1</span><span style="color: rgb(184, 187, 38);">-</span><span style="color: rgb(251, 241, 199);">\1</span><span style="color: rgb(204, 120, 50);">$</span><span style="color: rgb(184, 187, 38);">/</span></span>
+<span md-src-pos="10807..10808"></span><span md-src-pos="10807..10810"></span></code></pre>
+   <table md-src-pos="10812..11011">
+    <thead>
+     <tr md-src-pos="10812..10851">
+      <th md-src-pos="10813..10822">(index)</th>
+      <th md-src-pos="10823..10840">input</th>
+      <th md-src-pos="10841..10850">result</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="10892..10931">
+      <td md-src-pos="10893..10902"><code md-src-pos="10894..10897">0</code></td>
+      <td md-src-pos="10903..10920"><code md-src-pos="10904..10913">'a,a-a'</code></td>
+      <td md-src-pos="10921..10930"><code md-src-pos="10922..10928">true</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="10932..10971">
+      <td md-src-pos="10933..10942"><code md-src-pos="10934..10937">1</code></td>
+      <td md-src-pos="10943..10960"><code md-src-pos="10944..10959">'foo,foo-foo'</code></td>
+      <td md-src-pos="10961..10970"><code md-src-pos="10962..10968">true</code></td>
+     </tr>
+     <tr md-src-pos="10972..11011">
+      <td md-src-pos="10973..10982"><code md-src-pos="10974..10977">2</code></td>
+      <td md-src-pos="10983..11000"><code md-src-pos="10984..10999">'foo,bar-foo'</code></td>
+      <td md-src-pos="11001..11010"><code md-src-pos="11002..11009">false</code></td>
+     </tr>
+    </tbody>
+   </table>
+   <p md-src-pos="11013..11068"><span md-src-pos="11013..11068">With many capturing groups we just increment the index.</span></p>
+   <pre md-src-pos="11070..11118"><code class="language-regexp" md-src-pos="11070..11118"><span md-src-pos="11070..11080"></span><span md-src-pos="11080..11115"><span style="color: rgb(184, 187, 38);">/</span><span style="color: rgb(204, 120, 50);">^</span><span style="color: rgb(232, 191, 106);">(</span><span style="color: rgb(232, 191, 106);">\w</span><span style="color: rgb(211, 134, 155);">+</span><span style="color: rgb(232, 191, 106);">)</span><span style="color: rgb(184, 187, 38);">,</span><span style="color: rgb(232, 191, 106);">(</span><span style="color: rgb(232, 191, 106);">\w</span><span style="color: rgb(211, 134, 155);">+</span><span style="color: rgb(232, 191, 106);">)</span><span style="color: rgb(184, 187, 38);"> </span><span style="color: rgb(184, 187, 38);">R</span><span style="color: rgb(184, 187, 38);">e</span><span style="color: rgb(184, 187, 38);">v</span><span style="color: rgb(184, 187, 38);">e</span><span style="color: rgb(184, 187, 38);">r</span><span style="color: rgb(184, 187, 38);">s</span><span style="color: rgb(184, 187, 38);">e</span><span style="color: rgb(184, 187, 38);">d</span><span style="color: rgb(184, 187, 38);"> </span><span style="color: rgb(184, 187, 38);">i</span><span style="color: rgb(184, 187, 38);">s</span><span style="color: rgb(184, 187, 38);">:</span><span style="color: rgb(184, 187, 38);"> </span><span style="color: rgb(251, 241, 199);">\2</span><span style="color: rgb(184, 187, 38);">,</span><span style="color: rgb(251, 241, 199);">\1</span><span style="color: rgb(204, 120, 50);">$</span><span style="color: rgb(184, 187, 38);">/</span></span>
+<span md-src-pos="11115..11116"></span><span md-src-pos="11115..11118"></span></code></pre>
+   <table md-src-pos="11120..11404">
+    <thead>
+     <tr md-src-pos="11120..11176">
+      <th md-src-pos="11121..11130">(index)</th>
+      <th md-src-pos="11131..11165">input</th>
+      <th md-src-pos="11166..11175">result</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr md-src-pos="11234..11290">
+      <td md-src-pos="11235..11244"><code md-src-pos="11236..11239">0</code></td>
+      <td md-src-pos="11245..11279"><code md-src-pos="11246..11278">'foo,bar Reversed is: bar,foo'</code></td>
+      <td md-src-pos="11280..11289"><code md-src-pos="11281..11287">true</code></td>
+     </tr>
+     <tr class="intellij-row-even" md-src-pos="11291..11347">
+      <td md-src-pos="11292..11301"><code md-src-pos="11293..11296">1</code></td>
+      <td md-src-pos="11302..11336"><code md-src-pos="11303..11327">'1,2 Reversed is: 2,1'</code></td>
+      <td md-src-pos="11337..11346"><code md-src-pos="11338..11344">true</code></td>
+     </tr>
+     <tr md-src-pos="11348..11404">
+      <td md-src-pos="11349..11358"><code md-src-pos="11350..11353">2</code></td>
+      <td md-src-pos="11359..11393"><code md-src-pos="11360..11392">'foo,bar Reversed is: foo,bar'</code></td>
+      <td md-src-pos="11394..11403"><code md-src-pos="11395..11402">false</code></td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+ </body>
+</html>

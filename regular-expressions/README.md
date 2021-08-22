@@ -252,3 +252,65 @@ Finally, there one more improvement we can make.  The `\w` character class match
 ```jsregexp
 /^https?:/\w*\.[a-z]{2,3}$/
 ```
+
+### OR with words
+
+The character classes are akin to a long boolean `OR` over a set of single characters.  We can also perform an `OR` on strings.  The URL above could have been written as an `http` or `https`.  The way we have written it is more succinct than writing an entire `OR` but there are other cases where might not be able to just have an optional character.  If we wanted to confirm that a filename has an image extension then we would have to check that it ends with a `.jpg`, `.gif`, `.bmp` etc.  To achieve this we use the syntax:
+
+```regexp
+/(\.gif|\.png|\.bmp)$/
+```
+
+| (index) | input                  | result  |
+| ------- | ---------------------- | ------- |
+| `0`     | `file.jpg`             | `true`  |
+| `1`     | `file.gif`             | `true`  |
+| `2`     | `file.bmp`             | `true`  |
+| `3`     | `my.file.jpg.bm`       | `true`  |
+| `4`     | `not-an-image.jpg.txt` | `false` |
+
+## Capturing groups
+
+There's times when we need to look for repetitions that aren't next to each other, for example we might want to check that a list of filenames all have the same extension.
+
+Let take a simple example.  We'll have some arbitrary string that's repeated three times and separated by a `,` and then a `-`.
+
+e.g.:
+
+* `a,a-a`
+* `foo,foo-foo`
+
+In the previous section we used `(` and `)` to delimit the options in the `OR`.  This actually create a capturing group and we can refer back to capturing groups in other parts of the regex.  The simplest syntax for referencing a capturing group is a `\` followed by an integer representing the ordinal position of the group to retrieve.
+
+in the example above we create a capturing group around the text prior to the `,` and reuse it with `\1`.
+
+```regexp
+/^(\w+),\1-\1$/
+```
+
+| (index) | input           | result  |
+| ------- | --------------- | ------- |
+| `0`     | `'a,a-a'`       | `true`  |
+| `1`     | `'foo,foo-foo'` | `true`  |
+| `2`     | `'foo,bar-foo'` | `false` |
+
+With many capturing groups we just increment the index.
+
+```regexp
+/^(\w+),(\w+) Reversed is: \2,\1$/
+```
+
+| (index) | input                            | result  |
+| ------- | -------------------------------- | ------- |
+| `0`     | `'foo,bar Reversed is: bar,foo'` | `true`  |
+| `1`     | `'1,2 Reversed is: 2,1'`         | `true`  |
+| `2`     | `'foo,bar Reversed is: foo,bar'` | `false` |
+
+There's an obvious problem here.  It's *horrible* to look at with any more than a handful of references.  Altering the regex in the future is impossible because the groups are referenced ordinally.  I nicer solution is using _named capture groups_.
+
+```jsregexp
+/^(?<first>\w+),(?<second>\w+) Reversed is: \k<second>,\k<first>$/
+```
+
+> Node has problems with the `\k<...>` syntax.
+
